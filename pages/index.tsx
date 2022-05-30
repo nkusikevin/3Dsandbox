@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import { useGLTF } from "drei";
 import type { NextPage } from "next";
 import { Canvas } from "react-three-fiber";
+import Box from "../components/Box";
+import LightBulb from "../components/Light";
 import Floor from "../components/Floor";
 import css from "../styles/Home.module.css";
 
@@ -15,7 +17,9 @@ const Home: NextPage = () => {
 					position: [-6, 7, 7],
 				}}>
 				{/* <Suspense fallback={null}></Suspense> */}
-				<ambientLight color={"white"} intensity={0.3} />
+				<ambientLight color={"white"} intensity={0.2} />
+				<LightBulb position={[0, 3, 0]} />
+				<Box rotateX={3} rotateY={0.2} />
 				<Floor position={[0, -1, 0]} />
 			</Canvas>
 		</div>
